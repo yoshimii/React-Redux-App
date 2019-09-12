@@ -10,9 +10,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const beerStore = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+const beerStore = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));//create store with initial state and midleware
 
-ReactDOM.render (
+ReactDOM.render (//Providing store to app
     <Provider store={beerStore}>
         <App/>
     </Provider>,

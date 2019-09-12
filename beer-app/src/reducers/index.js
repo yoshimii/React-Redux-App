@@ -1,6 +1,8 @@
+import { FETCHING_BEER, FETCHED_BEER, FETCH_BEER_FAIL } from '../actions';
+
 const initialState = {
     beer: {
-        name:'',
+        name:'beer name',
         abv:'',
         shortName: '',
         description:'',
@@ -12,5 +14,13 @@ const initialState = {
     error:''
 };
 export const reducer = (state = initialState, action) => {
-
+    switch(action.type) {
+        case FETCHING_BEER:
+            return {
+                ...state,
+                isFetching: true,
+                error: ''
+            }
+            default: return state;
+    }
 } 
